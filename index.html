@@ -236,6 +236,13 @@
   });
 });
 
+     //inserting image clicked into modal
+    $('.img-project').on('click', function() {
+        var bodyRightPadding = parseInt($('body').css('padding-right'), 10);
+        console.log("Padding: " + bodyRightPadding + " - " + $('body').css('padding-right'));
+        if(bodyRightPadding > 0) $('body').css('padding-right', '0');
+    });
+
 
     var mn = $(".sticky-container");
     var ts = $(".test");
