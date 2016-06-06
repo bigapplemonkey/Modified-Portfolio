@@ -244,10 +244,12 @@
     // });
 
     $(window).on('shown.bs.modal', function() {
+    $('body').css('padding-right', '0');
     $('#code').modal('show');
-    var bodyRightPadding = parseInt($('body').css('padding-right'), 10);
-        console.log("Padding: " + bodyRightPadding + " - " + $('body').css('padding-right'));
-        if(bodyRightPadding > 0) $('body').css('padding-right', '0');
+    $('body').css('padding-right', '0');
+    // var bodyRightPadding = parseInt($('body').css('padding-right'), 10);
+    //     console.log("Padding: " + bodyRightPadding + " - " + $('body').css('padding-right'));
+    //     if(bodyRightPadding > 0) $('body').css('padding-right', '0');
 });
 
 
