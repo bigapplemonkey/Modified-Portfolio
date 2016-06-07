@@ -177,7 +177,7 @@ a:hover {
 	margin-bottom: 15px;
 }
 
-.fixit {
+.sticky-parallax {
 	position: fixed;
 	min-height: 125px;
 	top: 0;
@@ -404,6 +404,7 @@ a:hover {
 }
 
 @media screen and (max-width: 767px) {
+
 	h3 {
 		margin-top: 0.1em;
 	}
@@ -421,9 +422,21 @@ a:hover {
 		margin-bottom: 2em;
 	}
 
-	h4,
+	/*h4,
 	.title-super {
 		text-align: center;
+	}*/
+
+	#work, #work + div {
+		background-color: white;
+	}
+
+	#about {
+		margin-top: 0;
+	}
+
+	.main {
+		padding-top: 80px;
 	}
 
 	.title-super {
@@ -438,6 +451,39 @@ a:hover {
 		margin-top: 0.8em;
 	}
 
+	.parallax-image{
+		display: none;
+	}
+
+	header {
+		position: relative;
+		height: 530px;
+	}
+
+	.mobile-jumbotron {
+		position: absolute;
+		width: 100%;
+		background: url(../images/testing.jpg) 75% 0 no-repeat;
+		opacity: 0.55;
+		top: -25px;
+		height: 610px;
+	}
+
+	.nav-container {
+		background-color: #E6EBF0;
+		opacity: 0.95;
+		-webkit-box-shadow: 0 1px 2px 0 rgba(0,0,0,0.22);
+    	box-shadow: 0 1px 2px 0 rgba(0,0,0,0.22);
+		height: 55px
+	}
+
+	.nav-wrapper {
+		padding-top: 20px;
+	}
+
+	.anchor {
+		height: 50px;
+	}
 }
 
 @media screen and (min-width: 768px) and (max-width: 991px) {
