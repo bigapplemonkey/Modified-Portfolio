@@ -23,33 +23,32 @@ $(document).ready(function() {
     });
 
     //check if mobile
-    var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-    console.log(isMobile);
+    // var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    // console.log(isMobile);
 
-    if (!isMobile) {
-        //caching some variables
-        var navSel = $('.sticky-container');
-        var stickyClass = 'sticky-container-scrolled';
-        var navDistance = $('.image-title').offset().top;
-        var titleSel = $('.nav-bar-title');
-        var leftClass = 'pull-left';
-        var aboutSel = $('#about');
-        var parallaxSel = $('.parallax-image');
-        var stickyParallClass = 'sticky-parallax';
-        var transCoverSel = $('#transparency-cover');
-        var whiteBackClass = 'white-background';
+    //caching some variables
+    var navSel = $('.sticky-container');
+    var stickyClass = 'sticky-container-scrolled';
+    var navDistance = $('.image-title').offset().top;
+    var titleSel = $('.nav-bar-title');
+    var leftClass = 'pull-left';
+    var aboutSel = $('#about');
+    var parallaxSel = $('.parallax-image');
+    var stickyParallClass = 'sticky-parallax';
+    var transCoverSel = $('#transparency-cover');
+    var whiteBackClass = 'white-background';
 
-        var ts = $('.test');
-        var cover = $('.cover-image')
-
-
-        hdr = $('.nav-container').height();
+    var ts = $('.test');
+    var cover = $('.cover-image')
 
 
-        //parallax effect / sticky nav bar
-        $(window).scroll(function() {
-            // console.log($(document).width());
+    hdr = $('.nav-container').height();
 
+    function updatePage() {
+        // console.log($(document).width());
+        var viewPortSize = $(document).width();
+
+        if (viewPortSize > 767) {
             //opacity linear function
             var opa = 0.55 + ($(this).scrollTop() * ((0.15 - 0.55) / 454));
             //parallax rate
@@ -95,8 +94,22 @@ $(document).ready(function() {
                     });
                 }
             }
-        });
-
+        }
     }
+
+
+    //parallax effect / sticky nav bar
+    $(window).scroll(updatePage);
+
+    $(window).resize(function() {
+        var viewPortSize = $(document).width();
+        if (viewPortSize <= 767) {
+            navSel.removeClass(stickyClass)
+            titleSel.removeClass(leftClass);
+            transCoverSel.removeClass(whiteBackClass);
+        }
+        updatePage();
+
+    });
 
 });
